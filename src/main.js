@@ -15,6 +15,10 @@ export default class FloatingLabelInput extends Component {
   constructor(props) {
     super(props);
 
+    if (!props.id) {
+      throw new Error('expectd id but none present');
+    }
+
     if (props.shrink && (props.shrink < 1 || props.shrink > 99)) {
       throw new Error('shrink prop must be between 1 and 99');
     }

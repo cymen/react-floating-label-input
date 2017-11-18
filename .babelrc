@@ -1,6 +1,8 @@
 {
-  "presets": ["react", "flow"],
-  "plugins": ["transform-react-jsx"],
+  "presets": ["react", "flow", "es2015"],
+  "plugins": [
+    "transform-react-jsx"
+  ],
   "env": {
     "test": {
       "presets": ["es2015", "react"]

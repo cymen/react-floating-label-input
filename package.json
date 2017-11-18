@@ -1,6 +1,6 @@
 {
   "name": "react-floating-label-input",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/react-floating-label-input.cjs.js",
   "module": "dist/react-floating-label-input.esm.js",
   "browser": "dist/react-floating-label-input.umd.js",

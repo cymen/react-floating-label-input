@@ -4,7 +4,7 @@ This is a floating label component for React. It inherits the font-size from the
 
 # Examples
 
-Interactive examples in project [Storybook](http://blog.cymen.org/react-floating-label-input).
+See it in action at the [Storybook](http://blog.cymen.org/react-floating-label-input).
 
 ![Screenshot](/images/react-floating-label-input.gif)
 

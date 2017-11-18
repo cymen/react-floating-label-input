@@ -4,9 +4,26 @@ This is a floating label component for React. It inherits the font-size from the
 
 # Examples
 
+## Visual
+
 See it in action at the [Storybook](http://blog.cymen.org/react-floating-label-input).
 
 ![Screenshot](/images/react-floating-label-input.gif)
+
+## Code
+
+Here is the example of font size 64px with shrink of 20% from above in JSX:
+
+```jsx
+  <div style={{ fontSize: 64 }}>
+    <FloatingLabelInput
+      id="example-3"
+      label="label"
+      onChange={action('onChange')}
+      shrink={20}
+    />
+  </div>
+```
 
 ## License
 

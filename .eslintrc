@@ -1,0 +1,6 @@
+{
+  "extends": "simenb-flow",
+  "env": {
+    "jest": true
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "react-floating-label-input",
+  "version": "1.0.0",
+  "main": "dist/react-floating-label-input.cjs.js",
+  "module": "dist/react-floating-label-input.esm.js",
+  "browser": "dist/react-floating-label-input.umd.js",
+  "author": "Cymen Vig <cymenvig@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cymen/react-floating-label-input.git"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/.enzyme.js",
+    "transform": {
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js}",
+      "!src/**/*.stories.{js}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 55,
+        "branches": 45,
+        "functions": 50,
+        "lines": 60
+      }
+    }
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.2.15",
+    "@storybook/addon-links": "^3.2.15",
+    "@storybook/react": "^3.2.15",
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babelrc-rollup": "^3.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-config-simenb-flow": "^10.0.9",
+    "eslint-plugin-import": "^2.8.0",
+    "flow-bin": "^0.59.0",
+    "jest": "^21.2.1",
+    "jest-css-modules": "^1.1.0",
+    "node-sass": "^4.6.1",
+    "postcss-modules": "^1.1.0",
+    "prettier": "^1.8.2",
+    "raf": "^3.4.0",
+    "rollup": "^0.51.5",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.5.5",
+    "sass-loader": "^6.0.6"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest test",
+    "coverage": "jest test --coverage",
+    "lint": "eslint src",
+    "flow": "flow",
+    "pretest": "npm run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "files": [
+    "dist"
+  ]
+}

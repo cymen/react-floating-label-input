@@ -46,6 +46,7 @@
     "@storybook/addon-actions": "^3.2.15",
     "@storybook/addon-links": "^3.2.15",
     "@storybook/react": "^3.2.15",
+    "@storybook/storybook-deployer": "^2.0.0",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
@@ -80,14 +81,15 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "jest test",
+    "build-storybook": "build-storybook",
     "coverage": "jest test --coverage",
-    "lint": "eslint src",
+    "deploy-storybook": "storybook-to-ghpages",
+    "dev": "rollup -c -w",
     "flow": "flow",
+    "lint": "eslint src",
     "pretest": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest test"
   },
   "files": [
     "dist"

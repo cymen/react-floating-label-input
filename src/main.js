@@ -34,7 +34,14 @@ export default class FloatingLabelInput extends Component {
 
     return (
       <div className={`${style.floatingLabelInput} ${active ? 'active' : ''}`}>
-        <div className="container">
+        <div
+          className="container"
+          style={{
+            height: shrink
+              ? `${1.2 + shrink/100}em`
+              : `2em`,
+          }}
+        >
           <label
             htmlFor={id}
             style={{

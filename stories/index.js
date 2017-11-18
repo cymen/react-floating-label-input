@@ -9,14 +9,14 @@ import FloatingLabelInput from '../src/main';
 storiesOf('FloatingLabelInput', module)
   .add(
     'default',
-    () =>
-      <div style={{ fontSize: '48px', padding: 1 }}>
+    () => (
+      <div style={{ fontSize: '20px', padding: 1 }}>
         <FloatingLabelInput
-          id="something"
-          label="something"
+          id="example-1"
+          label="label"
           onChange={action('onChange')}
-          placeholder="abcsdfsd"
-          shrink={40}
+          placeholder="placeholder"
         />
       </div>
+    )
   );

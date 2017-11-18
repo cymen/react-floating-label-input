@@ -18,7 +18,7 @@ See it in action at the [Storybook](http://blog.cymen.org/react-floating-label-i
 
 ## Code
 
-Here is the example of font size 64px with shrink of 20% from above in JSX:
+Here is the 3rd example above in JSX (64px font size with 20% label shrinkage):
 
 ```jsx
   <div style={{ fontSize: 64 }}>

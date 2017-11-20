@@ -4,29 +4,15 @@ import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
-import postcssModules from 'postcss-modules';
-import autoprefixer from 'autoprefixer';
+import sass from 'rollup-plugin-sass';
 
 import pkg from './package.json';
 
 const cssExportMap = {};
 
 const commonPlugins = [
-  postcss({
-    extensions: ['.css', '.sss', '.scss'],
-    plugins: [
-      postcssModules({
-        getJSON(id, exportTokens) {
-          cssExportMap[id] = exportTokens;
-        },
-      }),
-      autoprefixer(),
-    ],
-    getExportNamed: false, //Default false, when set to true it will also named export alongside default export your class names
-    getExport(id) {
-      return cssExportMap[id];
-    },
+  sass({
+    output: pkg.style,
   }),
   babel(babelrc({ addModuleOptions: false })),
 ];
@@ -45,7 +31,7 @@ export default [
     globals: {
       react: 'React',
     },
-    name: 'floatingLabelInput',
+    name: 'FloatingLabelInput',
     plugins: [
       ...commonPlugins,
       resolve(), // so Rollup can find `ms`

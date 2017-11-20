@@ -1,8 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import classNames from 'classnames';
-import style from './main.scss';
+import './main.scss';
 
 type Props = {
   label: string,
@@ -33,7 +32,7 @@ export default class FloatingLabelInput extends Component {
     const { active } = this.state;
 
     return (
-      <div className={`${style.floatingLabelInput} ${active ? 'active' : ''}`}>
+      <div className={`react-floating-label-input ${active ? 'active' : ''}`}>
         <div
           className="container"
           style={{

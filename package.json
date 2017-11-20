@@ -4,6 +4,7 @@
   "main": "dist/react-floating-label-input.cjs.js",
   "module": "dist/react-floating-label-input.esm.js",
   "browser": "dist/react-floating-label-input.umd.js",
+  "style": "dist/react-floating-label-input.css",
   "author": "Cymen Vig <cymenvig@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -68,15 +69,13 @@
     "jest": "^21.2.1",
     "jest-css-modules": "^1.1.0",
     "node-sass": "^4.6.1",
-    "postcss-loader": "^2.0.8",
-    "postcss-modules": "^1.1.0",
     "prettier": "^1.8.2",
     "raf": "^3.4.0",
     "rollup": "^0.51.5",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-postcss": "^0.5.5",
+    "rollup-plugin-sass": "^0.5.3",
     "sass-loader": "^6.0.6"
   },
   "scripts": {

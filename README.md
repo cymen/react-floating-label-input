@@ -6,7 +6,7 @@
 
 [![npm badge][npm-badge-png]][package-url]
 
-This is a floating label component for React. It inherits the font-size from the parent so you can easily set the desired input font-size in your own CSS. It also accepts a shrink property which can be 1-99 inclusive. That is the percentage to shrink the floating label when the input is focused or has a value.
+This is a floating label component for React. It inherits the font-size from the parent so you can easily set the desired input font-size in your own CSS. It also accepts a shrink property which can be 1-99 inclusive. That is the percentage the label should be of the input font size. That means if you have a font size of 20px on the input, the default 70% will result in a 14px label size (20 * 0.7 = 14).
 
 # Examples
 

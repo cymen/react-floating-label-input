@@ -23,7 +23,7 @@ Here is the 3rd example above in JSX (64px font size with 20% label shrinkage):
 ```jsx
 import React from 'react';
 import FloatingLabelInput from 'react-floating-label-input';
-import '~react-floating-label-input/dist/react-floating-label-input.css';
+import 'react-floating-label-input/dist/react-floating-label-input.css';
 
 export default ({ onChange, value }) =>
   <div style={{ fontSize: 64 }}>

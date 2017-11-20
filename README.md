@@ -21,14 +21,14 @@ See it in action at the [Storybook](http://blog.cymen.org/react-floating-label-i
 Here is the 3rd example above in JSX (64px font size with 20% label shrinkage):
 
 ```jsx
-  <div style={{ fontSize: 64 }}>
-    <FloatingLabelInput
-      id="example-3"
-      label="label"
-      onChange={action('onChange')}
-      shrink={20}
-    />
-  </div>
+<div style={{ fontSize: 64 }}>
+  <FloatingLabelInput
+    id="example-3"
+    label="label"
+    onChange={action('onChange')}
+    shrink={20}
+  />
+</div>
 ```
 
 ## License

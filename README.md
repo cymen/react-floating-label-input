@@ -21,15 +21,25 @@ Try it yourself at the [Storybook](http://blog.cymen.org/react-floating-label-in
 Here is the 3rd example above in JSX (64px font size with 20% label shrinkage):
 
 ```jsx
-<div style={{ fontSize: 64 }}>
-  <FloatingLabelInput
-    id="example-3"
-    label="label"
-    onChange={action('onChange')}
-    shrink={20}
-  />
-</div>
+import React from 'react';
+import FloatingLabelInput from 'react-floating-label-input';
+import '~react-floating-label-input/dist/react-floating-label-input.css';
+
+export default ({ onChange, value }) =>
+  <div style={{ fontSize: 64 }}>
+    <FloatingLabelInput
+      id="example-3"
+      label="label"
+      onChange={onChange}
+      shrink={20}
+      value={value}
+    />
+  </div>;
 ```
+
+# Styling
+
+The component renders with a DOM class of `react-floating-label-input`.
 
 ## License
 

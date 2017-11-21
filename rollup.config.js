@@ -17,7 +17,7 @@ const commonPlugins = [
   babel(babelrc({ addModuleOptions: false })),
 ];
 
-const external = ['react', 'react-dom'];
+const external = ['react', 'react-dom', 'classnames'];
 
 export default [
   {

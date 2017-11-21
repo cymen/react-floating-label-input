@@ -57,6 +57,14 @@ export default ({ onChange, value }) =>
 
 The component renders with a DOM class of `react-floating-label-input`.
 
+# Dependencies
+
+Peer dependencies:
+
+* react
+* react-dom
+* classnames
+
 ## License
 
 [MIT](LICENSE)

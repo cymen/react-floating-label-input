@@ -28,6 +28,7 @@ import 'react-floating-label-input/dist/react-floating-label-input.css';
 export default ({ onChange, value }) =>
   <div style={{ fontSize: 64 }}>
     <FloatingLabelInput
+      fontSize="1.5em"
       id="example-3"
       label="label"
       onChange={onChange}
@@ -36,6 +37,21 @@ export default ({ onChange, value }) =>
     />
   </div>;
 ```
+
+### Props
+
+| name         | optional | default    |
+|--------------|----------|------------|
+| fontSize     | yes      | inherit    |
+| id           | no       |            |
+| label        | no       |            |
+| onBlur       | yes      |            |
+| onChange     | no       |            |
+| OnFocus      | yes      |            |
+| placeholder  | yes      | ''         |
+| shrink       | yes      | 70%        |
+| type         | yes      | text       |
+| value        | yes      | ''         |
 
 # Styling
 

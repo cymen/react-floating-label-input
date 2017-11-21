@@ -1,13 +1,20 @@
 // @flow
 
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import './main.scss';
 
 type Props = {
+  className?: string,
+  fontSize?: string,
+  id: string,
   label: string,
+  onBlur?: Event => void,
   onChange: Event => void,
+  onFocus?: Event => void,
   placehold?: string,
   shrink?: number,
+  type?: string,
 };
 
 export default class FloatingLabelInput extends Component {
@@ -23,19 +30,28 @@ export default class FloatingLabelInput extends Component {
     }
 
     this.state = {
-      active: false,
+      active: props.value && props.value.length > 0,
     };
   }
 
   render() {
-    const { id, label, onChange, shrink, placeholder } = this.props;
+    const { className, fontSize, id, label, onBlur, onChange, onFocus, shrink, placeholder, type, value } = this.props;
     const { active } = this.state;
+    console.log('className', className);
 
     return (
-      <div className={`react-floating-label-input ${active ? 'active' : ''}`}>
+      <div
+        className={classNames('react-floating-label-input', {
+          active,
+          [className]: !!className,
+        })}
+      >
         <div
           className="container"
           style={{
+            fontSize: fontSize
+              ? fontSize
+              : 'inherit',
             height: shrink
               ? `${1.2 + shrink/100}em`
               : `2em`,
@@ -51,11 +67,22 @@ export default class FloatingLabelInput extends Component {
           >{label}</label>
           <input
             id={id}
-            onBlur={event => this.setState({ active: event.target.value.length !== 0 })}
+            onBlur={event => {
+              this.setState({ active: event.target.value.length !== 0 });
+              if (onBlur) {
+                onBlur(event);
+              }
+            }}
             onChange={onChange}
-            onFocus={() => this.setState({ active: true })}
+            onFocus={event => {
+              this.setState({ active: true });
+              if (onFocus) {
+                onFocus(event);
+              }
+            }}
             placeholder={placeholder}
-            type="text"
+            type={type || "text"}
+            value={value}
           />
         </div>
       </div>

@@ -28,7 +28,6 @@ import 'react-floating-label-input/dist/react-floating-label-input.css';
 export default ({ onChange, value }) =>
   <div style={{ fontSize: 64 }}>
     <FloatingLabelInput
-      fontSize="1.5em"
       id="example-3"
       label="label"
       onChange={onChange}

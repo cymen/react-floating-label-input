@@ -46,7 +46,7 @@ export default ({ onChange, value }) =>
 | label        | no       |            |
 | onBlur       | yes      |            |
 | onChange     | no       |            |
-| OnFocus      | yes      |            |
+| onFocus      | yes      |            |
 | placeholder  | yes      | ''         |
 | shrink       | yes      | 70%        |
 | type         | yes      | text       |

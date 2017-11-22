@@ -38,10 +38,10 @@
       }
     }
   },
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+  "peerDependencies": {
+    "classnames": "^2.0.0",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.15",

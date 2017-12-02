@@ -37,7 +37,6 @@ export default class FloatingLabelInput extends Component {
   render() {
     const { className, fontSize, id, label, onBlur, onChange, onFocus, shrink, placeholder, type, value } = this.props;
     const { active } = this.state;
-    console.log('className', className);
 
     return (
       <div

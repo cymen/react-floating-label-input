@@ -35,7 +35,7 @@ export default class FloatingLabelInput extends Component {
   }
 
   render() {
-    const { className, fontSize, id, label, onBlur, onChange, onFocus, shrink, placeholder, type, value } = this.props;
+    const { className, fontSize, id, label, onBlur, onChange, onFocus, shrink, placeholder, type, value, refs } = this.props;
     const { active } = this.state;
 
     return (
@@ -82,6 +82,8 @@ export default class FloatingLabelInput extends Component {
             placeholder={placeholder}
             type={type || "text"}
             value={value}
+            ref={refs}
+            {...this.props}
           />
         </div>
       </div>

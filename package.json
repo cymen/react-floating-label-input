@@ -1,5 +1,6 @@
 {
   "name": "react-floating-label-input",
+  "description": "A floating label input component for React with control over label shrinking percentage.",
   "version": "3.1.0",
   "main": "dist/react-floating-label-input.cjs.js",
   "module": "dist/react-floating-label-input.esm.js",

@@ -1,23 +1,17 @@
 /* eslint-disable */
 
 import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import sass from 'rollup-plugin-sass';
-
 import pkg from './package.json';
 
-const cssExportMap = {};
-
 const commonPlugins = [
-  sass({
-    output: pkg.style,
+  babel({
+    exclude: 'node_modules/**'
   }),
-  babel(babelrc({ addModuleOptions: false })),
 ];
 
-const external = ['react', 'react-dom', 'classnames'];
+const external = ['react', 'react-dom', 'classnames', 'styled-components'];
 
 export default [
   {

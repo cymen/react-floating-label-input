@@ -1,92 +1,117 @@
-// @flow
-
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import './main.scss';
+import React from 'react';
+import styled from 'styled-components';
 
 type Props = {
-  className?: string,
-  fontSize?: string,
-  id: string,
+  id?: string,
   label: string,
+  name?: string,
   onBlur?: Event => void,
   onChange: Event => void,
   onFocus?: Event => void,
   placehold?: string,
-  shrink?: number,
   type?: string,
 };
 
-export default class FloatingLabelInput extends Component {
-  constructor(props) {
-    super(props);
+type State = {
+  active: boolean,
+};
 
-    if (!props.id) {
+const FloatingLabelInput = styled.article`
+  width: 100%;
+`;
+
+const FloatingLabelInputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  height: 2em;
+  border-bottom: 1px solid #ddd;
+  font-size: inherit;
+`;
+
+const FloatingLabel = styled.label`
+  padding: 0;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  color: #9b9b9b;
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+  transform-origin: left top;
+  font-size: 1em;
+  cursor: text;
+  pointer-events: none;
+  width: 66.6%;
+  transform: ${props =>
+    props.active ? 'translate3d(0, -70%, 0) scale(0.70)' : 'none'};
+`;
+
+const FloatingInput = styled.input`
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  &::placeholder {
+    color: #9b9b9b;
+    opacity: ${props => (props.active ? 1 : 0)};
+    transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+`;
+
+export default class TextInput extends React.PureComponent<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    if (!props.id && !props.name) {
       throw new Error('expectd id but none present');
     }
 
-    if (props.shrink && (props.shrink < 1 || props.shrink > 99)) {
-      throw new Error('shrink prop must be between 1 and 99');
-    }
-
     this.state = {
-      active: props.value && props.value.length > 0,
+      active: props.value && props.value.length > 0
     };
+
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+  }
+
+  _onFocus() {
+    this.setState({ active: true });
+    if (this.props.onFocus) {
+      this.props.onFocus();
+    }
+  }
+
+  _onBlur(event) {
+    this.setState({ active: event.target.value.length !== 0 });
+    if (this.props.onBlur) {
+      this.props.onBlur();
+    }
   }
 
   render() {
-    const { className, fontSize, id, label, onBlur, onChange, onFocus, shrink, placeholder, type, value, refs } = this.props;
+    const { name, placeholder, onChange, label, type } = this.props;
+
+    const id = this.props.id || name;
     const { active } = this.state;
 
     return (
-      <div
-        className={classNames('react-floating-label-input', {
-          active,
-          [className]: !!className,
-        })}
-      >
-        <div
-          className="container"
-          style={{
-            fontSize: fontSize
-              ? fontSize
-              : 'inherit',
-            height: shrink
-              ? `${1.2 + shrink/100}em`
-              : `2em`,
-          }}
-        >
-          <label
-            htmlFor={id}
-            style={{
-              transform: active
-                ? `translate3d(0, -${shrink || '70'}%, 0) scale(0.${shrink || '70'})`
-                : 'none',
-            }}
-          >{label}</label>
-          <input
+      <FloatingLabelInput>
+        <FloatingLabelInputContainer>
+          <FloatingLabel htmlFor={id} active={active}>
+            {label}
+          </FloatingLabel>
+          <FloatingInput
+            active={active}
             id={id}
-            onBlur={event => {
-              this.setState({ active: event.target.value.length !== 0 });
-              if (onBlur) {
-                onBlur(event);
-              }
-            }}
-            onChange={onChange}
-            onFocus={event => {
-              this.setState({ active: true });
-              if (onFocus) {
-                onFocus(event);
-              }
-            }}
             placeholder={placeholder}
-            type={type || "text"}
-            value={value}
-            ref={refs}
-            {...this.props}
+            onChange={onChange}
+            onBlur={event => this._onBlur(event)}
+            onFocus={this._onFocus}
+            type={type || 'text'}
           />
-        </div>
-      </div>
+        </FloatingLabelInputContainer>
+      </FloatingLabelInput>
     );
   }
 }

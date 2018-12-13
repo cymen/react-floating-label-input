@@ -1,11 +1,17 @@
 {
-  "presets": ["react", "flow"],
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ],
   "plugins": [
-    "transform-react-jsx"
+    "@babel/plugin-transform-react-jsx"
   ],
   "env": {
     "test": {
-      "presets": ["es2015", "react"]
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ]
     }
   }
 }

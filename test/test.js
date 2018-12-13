@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { shallow } from 'enzyme'
-import HowLongTillLunch from '../src/main';
+import FloatingLabelInput from '../src/main';
 
 describe('HowLongTilLunch', () => {
   it('simple test', () => {
-    const wrapper = shallow(<HowLongTillLunch hours={10} minutes={15} />);
+    const wrapper = shallow(<FloatingLabelInput name="name" prompt="Name" />);
 
     expect(wrapper).toHaveLength(1);
   });

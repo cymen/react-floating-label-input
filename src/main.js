@@ -1,21 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Props = {
-  id?: string,
-  label: string,
-  name?: string,
-  onBlur?: Event => void,
-  onChange: Event => void,
-  onFocus?: Event => void,
-  placehold?: string,
-  type?: string,
-};
-
-type State = {
-  active: boolean,
-};
-
 const FloatingLabelInput = styled.article`
   width: 100%;
 `;
@@ -60,8 +45,8 @@ const FloatingInput = styled.input`
   }
 `;
 
-export default class TextInput extends React.PureComponent<Props, State> {
-  constructor(props: Props) {
+export default class TextInput extends React.PureComponent {
+  constructor(props) {
     super(props);
     if (!props.id && !props.name) {
       throw new Error('expectd id but none present');

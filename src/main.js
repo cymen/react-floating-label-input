@@ -49,7 +49,7 @@ export default class TextInput extends React.PureComponent {
   constructor(props) {
     super(props);
     if (!props.id && !props.name) {
-      throw new Error('expectd id but none present');
+      throw new Error('expected id but none present');
     }
 
     this.state = {

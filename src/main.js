@@ -56,29 +56,28 @@ export default class TextInput extends React.PureComponent {
       active: props.value && props.value.length > 0
     };
 
-    this._onFocus = this._onFocus.bind(this);
-    this._onBlur = this._onBlur.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
-  _onFocus() {
+  onFocus(event) {
     this.setState({ active: true });
     if (this.props.onFocus) {
-      this.props.onFocus();
+      this.props.onFocus(event);
     }
   }
 
-  _onBlur(event) {
+  onBlur(event) {
     this.setState({ active: event.target.value.length !== 0 });
     if (this.props.onBlur) {
-      this.props.onBlur();
+      this.props.onBlur(event);
     }
   }
 
   render() {
-    const { name, placeholder, onChange, label, type } = this.props;
-
-    const id = this.props.id || name;
+    const { name, label, onBlur, onFocus, type, refs, ...otherProps } = this.props;
     const { active } = this.state;
+    const id = this.props.id || name;
 
     return (
       <FloatingLabelInput>
@@ -89,11 +88,10 @@ export default class TextInput extends React.PureComponent {
           <FloatingInput
             active={active}
             id={id}
-            placeholder={placeholder}
-            onChange={onChange}
-            onBlur={event => this._onBlur(event)}
-            onFocus={this._onFocus}
-            type={type || 'text'}
+            onBlur={this.onBlur}
+            onFocus={this.onFocus}
+            ref={refs}
+            {...otherProps}
           />
         </FloatingLabelInputContainer>
       </FloatingLabelInput>

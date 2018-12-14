@@ -48,8 +48,11 @@ export default ({ onChange, value }) =>
 | onChange     | no       |            |
 | onFocus      | yes      |            |
 | placeholder  | yes      | ''         |
+| refs         | yes      |            |
 | type         | yes      | text       |
 | value        | yes      | ''         |
+
+* `refs` is set as `ref` prop on `input`
 
 # Dependencies
 

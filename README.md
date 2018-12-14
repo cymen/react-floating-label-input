@@ -31,7 +31,9 @@ export default ({ onChange, value }) =>
     <FloatingLabelInput
       id="example-3"
       label="label"
-      onChange={onChange}
+      onBlur={action('onBlur')}
+      onChange={action('onChange')}
+      onFocus={action('onFocus')}
       value={value}
     />
   </div>;

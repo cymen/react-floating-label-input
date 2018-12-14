@@ -16,7 +16,9 @@ storiesOf('FloatingLabelInput', module)
           <FloatingLabelInput
             id="example-1"
             label="label"
+            onBlur={action('onBlur')}
             onChange={action('onChange')}
+            onFocus={action('onFocus')}
           />
         </div>
         <div style={{ border: '1px dashed #ddd', padding: '1em', margin: '10px 0' }}>
@@ -25,7 +27,9 @@ storiesOf('FloatingLabelInput', module)
             <FloatingLabelInput
               id="example-2"
               label="label"
+              onBlur={action('onBlur')}
               onChange={action('onChange')}
+              onFocus={action('onFocus')}
               placeholder="placeholder"
             />
           </div>
@@ -36,7 +40,9 @@ storiesOf('FloatingLabelInput', module)
             <FloatingLabelInput
               id="example-3"
               label="label"
+              onBlur={action('onBlur')}
               onChange={action('onChange')}
+              onFocus={action('onFocus')}
             />
           </div>
         </div>
@@ -46,7 +52,9 @@ storiesOf('FloatingLabelInput', module)
             <FloatingLabelInput
               id="example-3"
               label="label"
+              onBlur={action('onBlur')}
               onChange={action('onChange')}
+              onFocus={action('onFocus')}
               placeholder="placeholder"
             />
           </div>

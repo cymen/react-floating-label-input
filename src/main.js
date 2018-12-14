@@ -75,7 +75,7 @@ export default class TextInput extends React.PureComponent {
   }
 
   render() {
-    const { label, onBlur, onFocus, type, refs, ...otherProps } = this.props;
+    const { id, label, onBlur, onFocus, type, refs, ...otherProps } = this.props;
     const { active } = this.state;
 
     return (
@@ -86,6 +86,7 @@ export default class TextInput extends React.PureComponent {
           </FloatingLabel>
           <FloatingInput
             active={active}
+            id={id}
             onBlur={this.onBlur}
             onFocus={this.onFocus}
             ref={refs}

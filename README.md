@@ -48,21 +48,17 @@ export default ({ onChange, value }) =>
 | onChange     | no       |            |
 | onFocus      | yes      |            |
 | placeholder  | yes      | ''         |
-| shrink       | yes      | 70%        |
 | type         | yes      | text       |
 | value        | yes      | ''         |
-
-# Styling
-
-The component renders with a DOM class of `react-floating-label-input`.
 
 # Dependencies
 
 Peer dependencies:
 
+* classnames
 * react
 * react-dom
-* classnames
+* styled-components
 
 ## License
 

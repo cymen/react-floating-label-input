@@ -3,6 +3,8 @@
 
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
+![minified size](https://badgen.net/bundlephobia/min/react-floating-label-input)
+![minzipped size](https://badgen.net/bundlephobia/minzip/react-floating-label-input)
 
 [![npm badge][npm-badge-png]][package-url]
 

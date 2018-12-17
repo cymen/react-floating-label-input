@@ -11,7 +11,7 @@ const commonPlugins = [
   }),
 ];
 
-const external = ['react', 'react-dom', 'classnames', 'styled-components'];
+const external = ['react', 'react-dom', 'styled-components'];
 
 export default [
   {

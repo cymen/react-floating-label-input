@@ -62,7 +62,6 @@ export default ({ onChange, value }) =>
 
 Peer dependencies:
 
-* classnames
 * react
 * react-dom
 * styled-components

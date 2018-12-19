@@ -8,7 +8,8 @@
 
 [![npm badge][npm-badge-png]][package-url]
 
-This is a floating label component for React. It inherits the font-size from the parent so you can easily set the desired input font-size in your own CSS.
+This is a floating label component for React. It inherits the font-size from the parent
+so you can easily set the desired input font-size.
 
 # Examples
 

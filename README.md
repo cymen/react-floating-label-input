@@ -14,17 +14,7 @@ A floating label component for React. It inherits the font-size from the parent.
 
 Try it yourself at the [Storybook](http://blog.cymen.org/react-floating-label-input).
 
-# Examples
-
-## Visual
-
-![Screenshot](/images/react-floating-label-input.gif)
-
-Note that version 4 deprecated the `shrink` property (the above image has yet to be updated).
-
-## Code
-
-Here is the 3rd example above in JSX:
+## Example
 
 ```jsx
 import React from 'react';
@@ -43,7 +33,7 @@ export default ({ onChange, value }) =>
   </div>;
 ```
 
-### Props
+## Props
 
 | name         | optional | default    |
 |--------------|----------|------------|
@@ -60,7 +50,7 @@ export default ({ onChange, value }) =>
 
 * `refs` is set as `ref` prop on `input`
 
-# Dependencies
+## Dependencies
 
 Peer dependencies:
 

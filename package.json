@@ -1,6 +1,7 @@
 {
   "name": "react-floating-label-input",
   "description": "A floating label input component for React",
+  "keywords": "floating label input field material ui",
   "version": "4.0.6",
   "main": "dist/react-floating-label-input.cjs.js",
   "module": "dist/react-floating-label-input.esm.js",

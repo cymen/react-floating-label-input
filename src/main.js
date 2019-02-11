@@ -90,6 +90,7 @@ export default class TextInput extends React.PureComponent {
             onBlur={this.onBlur}
             onFocus={this.onFocus}
             ref={refs}
+            type={type}
             {...otherProps}
           />
         </FloatingLabelInputContainer>

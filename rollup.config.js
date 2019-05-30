@@ -21,11 +21,12 @@ export default [
     output: {
       file: pkg.browser,
       format: 'umd',
+      name: 'FloatingLabelInput',
+      globals: {
+        react: 'React',
+        'styled-components': 'styled',
+      },
     },
-    globals: {
-      react: 'React',
-    },
-    name: 'FloatingLabelInput',
     plugins: [
       ...commonPlugins,
       resolve(), // so Rollup can find `ms`

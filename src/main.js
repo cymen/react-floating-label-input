@@ -75,17 +75,18 @@ export default class TextInput extends React.PureComponent {
   }
 
   render() {
-    const { id, label, onBlur, onFocus, type, refs, ...otherProps } = this.props;
+    const { id, label, onBlur, onFocus, type, refs, className, ...otherProps } = this.props;
     const { active } = this.state;
 
     return (
       <FloatingLabelInput>
-        <FloatingLabelInputContainer>
-          <FloatingLabel htmlFor={id} active={active}>
+        <FloatingLabelInputContainer className={className}>
+          <FloatingLabel className={className} htmlFor={id} active={active}>
             {label}
           </FloatingLabel>
           <FloatingInput
             active={active}
+            className={className}
             id={id}
             onBlur={this.onBlur}
             onFocus={this.onFocus}

@@ -37,6 +37,7 @@ export default ({ onChange, value }) =>
 
 | name         | optional | default    |
 |--------------|----------|------------|
+| className    | yes	  |            |
 | fontSize     | yes      | inherit    |
 | id           | no       |            |
 | label        | no       |            |

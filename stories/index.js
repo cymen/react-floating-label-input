@@ -59,6 +59,20 @@ storiesOf('FloatingLabelInput', module)
             />
           </div>
         </div>
+        <div style={{ border: '1px dashed #ddd', padding: '1em', margin: '10px 0' }}>
+          <div>Font size of 64px and placeholder textarea:</div>
+          <div style={{ fontSize: 64 }}>
+            <FloatingLabelInput
+              id="example-3"
+              label="label"
+              onBlur={action('onBlur')}
+              onChange={action('onChange')}
+              onFocus={action('onFocus')}
+              placeholder="placeholder"
+              textarea="true"
+            />
+          </div>
+        </div>
       </div>
     )
   );

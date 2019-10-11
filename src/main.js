@@ -44,6 +44,21 @@ const FloatingInput = styled.input`
     transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   }
 `;
+const FloatingTextarea = styled.textarea`
+  margin:0;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding:1.25em;
+  &::placeholder {
+    color: #9b9b9b;
+    opacity: ${props => (props.active ? 1 : 0)};
+    transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+  }
+
+
+`;
 
 export default class TextInput extends React.PureComponent {
   constructor(props) {
@@ -75,8 +90,37 @@ export default class TextInput extends React.PureComponent {
   }
 
   render() {
-    const { id, label, onBlur, onFocus, type, refs, className, ...otherProps } = this.props;
+    const { id, label, onBlur, onFocus, type, refs, className,textarea, ...otherProps }= this.props;
     const { active } = this.state;
+    let input;
+
+    if (textarea) {
+    input =   <FloatingTextarea
+                       active={active}
+                       className={className}
+                       id={id}
+                       onBlur={this.onBlur}
+                       onFocus={this.onFocus}
+                       ref={refs}
+                       type={type}
+                       {...otherProps}
+
+                     />
+    }
+    else {
+    input =   <FloatingInput
+                      active={active}
+                      className={className}
+                      id={id}
+                      onBlur={this.onBlur}
+                      onFocus={this.onFocus}
+                      ref={refs}
+                      type={type}
+                      {...otherProps}
+
+                    />
+    }
+
 
     return (
       <FloatingLabelInput>
@@ -84,16 +128,7 @@ export default class TextInput extends React.PureComponent {
           <FloatingLabel className={className} htmlFor={id} active={active}>
             {label}
           </FloatingLabel>
-          <FloatingInput
-            active={active}
-            className={className}
-            id={id}
-            onBlur={this.onBlur}
-            onFocus={this.onFocus}
-            ref={refs}
-            type={type}
-            {...otherProps}
-          />
+        {input}
         </FloatingLabelInputContainer>
       </FloatingLabelInput>
     );

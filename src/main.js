@@ -56,18 +56,18 @@ export default class TextInput extends React.PureComponent {
       active: props.value && props.value.length > 0
     };
 
-    this.onFocus = this.onFocus.bind(this);
-    this.onBlur = this.onBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
-  onFocus(event) {
+  handleFocus(event) {
     this.setState({ active: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);
     }
   }
 
-  onBlur(event) {
+  handleBlur(event) {
     this.setState({ active: event.target.value.length !== 0 });
     if (this.props.onBlur) {
       this.props.onBlur(event);
@@ -75,7 +75,7 @@ export default class TextInput extends React.PureComponent {
   }
 
   render() {
-    const { id, label, onBlur, onFocus, type, refs, className, ...otherProps } = this.props;
+    const { id, label, type, refs, className, ...otherProps } = this.props;
     const { active } = this.state;
 
     return (
@@ -88,8 +88,8 @@ export default class TextInput extends React.PureComponent {
             active={active}
             className={className}
             id={id}
-            onBlur={this.onBlur}
-            onFocus={this.onFocus}
+            onBlur={this.handleBlur}
+            onFocus={this.handleFocus}
             ref={refs}
             type={type}
             {...otherProps}

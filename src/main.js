@@ -40,7 +40,7 @@ const FloatingInput = styled.input`
   font-size: 1em;
   &::placeholder {
     color: #9b9b9b;
-    opacity: ${props => (props.active ? 1 : 0)};
+    opacity: ${props => (props.isActive ? 1 : 0)};
     transition: opacity 0.2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   }
 `;
@@ -53,7 +53,7 @@ export default class TextInput extends React.PureComponent {
     }
 
     this.state = {
-      active: props.value && props.value.length > 0
+      isActive: props.value && props.value.length > 0
     };
 
     this.onFocus = this.onFocus.bind(this);
@@ -61,14 +61,14 @@ export default class TextInput extends React.PureComponent {
   }
 
   onFocus(event) {
-    this.setState({ active: true });
+    this.setState({ isActive: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);
     }
   }
 
   onBlur(event) {
-    this.setState({ active: event.target.value.length !== 0 });
+    this.setState({ isActive: event.target.value.length !== 0 });
     if (this.props.onBlur) {
       this.props.onBlur(event);
     }
@@ -76,16 +76,16 @@ export default class TextInput extends React.PureComponent {
 
   render() {
     const { id, label, onBlur, onFocus, type, refs, className, ...otherProps } = this.props;
-    const { active } = this.state;
+    const { isActive } = this.state;
 
     return (
       <FloatingLabelInput>
         <FloatingLabelInputContainer className={className}>
-          <FloatingLabel className={className} htmlFor={id} active={active}>
+          <FloatingLabel className={className} htmlFor={id} isActive={isActive}>
             {label}
           </FloatingLabel>
           <FloatingInput
-            active={active}
+            isActive={isActive}
             className={className}
             id={id}
             onBlur={this.onBlur}

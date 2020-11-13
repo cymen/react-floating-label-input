@@ -60,6 +60,12 @@ export default class TextInput extends React.PureComponent {
     this.onBlur = this.onBlur.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.active === false && prevProps.value !== this.props.value) {
+      this.setState({ active: true });
+    }
+  }
+
   onFocus(event) {
     this.setState({ active: true });
     if (this.props.onFocus) {

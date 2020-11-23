@@ -61,7 +61,7 @@ export default class TextInput extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.active === false && prevProps.value !== this.props.value) {
+    if (!prevProps.active && prevProps.value !== this.props.value) {
       this.setState({ active: true });
     }
   }

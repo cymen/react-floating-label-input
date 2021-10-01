@@ -2,7 +2,7 @@
   "name": "react-floating-label-input",
   "description": "A floating label input component for React",
   "keywords": "floating label input field material ui",
-  "version": "4.3.2",
+  "version": "4.3.3",
   "main": "dist/react-floating-label-input.cjs.js",
   "module": "dist/react-floating-label-input.esm.js",
   "browser": "dist/react-floating-label-input.umd.js",
@@ -41,9 +41,9 @@
     }
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0",
-    "styled-components": "^4.0.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "styled-components": "^4.0.0 || ^5.0.0"
   },
   "dependencies": {},
   "devDependencies": {
